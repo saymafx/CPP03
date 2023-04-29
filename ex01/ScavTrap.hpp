@@ -1,42 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tidigov <tidigov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/31 14:57:18 by tidigov           #+#    #+#             */
-/*   Updated: 2023/04/19 15:30:23 by tidigov          ###   ########.fr       */
+/*   Created: 2023/04/19 15:56:40 by tidigov           #+#    #+#             */
+/*   Updated: 2023/04/19 16:21:11 by tidigov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-#include <iostream>
-#include <string.h>
+#include "ClapTrap.hpp"
 
-class ClapTrap {
+class ScavTrap : public ClapTrap {
     
 private:
 
-    int _Attack;
-    int _Energy;
-    int _Hit;
-    std::string  _Name;
-////////////////////////////////////////////////////////////////////////////////
 public:
-    ClapTrap();
-    ClapTrap( ClapTrap const & src);
-    ClapTrap(std::string name);
+    ScavTrap();
+    ScavTrap( ScavTrap const & src);
+    ScavTrap(std::string name);
     
-    ~ClapTrap();
+    ~ScavTrap();
 
-    ClapTrap & operator=(const ClapTrap& rhs);
+    ScavTrap & operator=(const ScavTrap& rhs);
 
     void    attack(const std::string& target);
-    void    takeDamage(unsigned int amount);
-    void    beRepaired(unsigned int amount);
 ////////////////////////////////////////////////////////////////////////////////
     int	getAttack(void);
     void	setAttack(int i);
