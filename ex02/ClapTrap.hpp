@@ -5,8 +5,52 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tidigov <tidigov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/31 14:57:35 by tidigov           #+#    #+#             */
-/*   Updated: 2023/03/31 14:57:36 by tidigov          ###   ########.fr       */
+/*   Created: 2023/03/31 14:57:18 by tidigov           #+#    #+#             */
+/*   Updated: 2023/05/02 09:21:39 by tidigov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef CLAPTRAP_HPP
+# define CLAPTRAP_HPP
+
+#include <iostream>
+#include <string.h>
+
+class ClapTrap {
+    
+protected:
+
+    int _Attack;
+    int _Energy;
+    int _Hit;
+    std::string  _Name;
+////////////////////////////////////////////////////////////////////////////////
+public:
+    ClapTrap();
+    ClapTrap( ClapTrap const & src);
+    ClapTrap(std::string name);
+    
+    ~ClapTrap();
+
+    ClapTrap & operator=(const ClapTrap& rhs);
+
+    void    attack(const std::string& target);
+    void    takeDamage(unsigned int amount);
+    void    beRepaired(unsigned int amount);
+////////////////////////////////////////////////////////////////////////////////
+    int	getAttack(void) const;
+    void	setAttack(int i);
+////////////////////////////////////////////////////////////////////////////////
+    int	getEnergy(void) const;
+    void	setEnergy(int i);
+////////////////////////////////////////////////////////////////////////////////
+    int	getHit(void) const;
+    void	setHit(int i);
+////////////////////////////////////////////////////////////////////////////////
+    std::string	getName() const;
+    void	setName(std::string);
+};
+
+std::ostream &	operator<<(std::ostream &o, ClapTrap const & rhs);
+
+#endif
