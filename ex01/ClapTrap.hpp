@@ -6,7 +6,7 @@
 /*   By: tidigov <tidigov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 14:57:18 by tidigov           #+#    #+#             */
-/*   Updated: 2023/04/29 16:20:49 by tidigov          ###   ########.fr       */
+/*   Updated: 2023/05/02 09:21:39 by tidigov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,17 @@ public:
     void    takeDamage(unsigned int amount);
     void    beRepaired(unsigned int amount);
 ////////////////////////////////////////////////////////////////////////////////
-    int	getAttack(void);
+    int	getAttack(void) const;
     void	setAttack(int i);
 ////////////////////////////////////////////////////////////////////////////////
-    int	getEnergy(void);
+    int	getEnergy(void) const;
     void	setEnergy(int i);
 ////////////////////////////////////////////////////////////////////////////////
-    int	getHit(void);
+    int	getHit(void) const;
     void	setHit(int i);
+////////////////////////////////////////////////////////////////////////////////
+    std::string	getName() const;
+    void	setName(std::string);
 };
 
 std::ostream &	operator<<(std::ostream &o, ClapTrap const & rhs);

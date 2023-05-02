@@ -6,7 +6,7 @@
 /*   By: tidigov <tidigov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 14:56:51 by tidigov           #+#    #+#             */
-/*   Updated: 2023/04/29 20:05:50 by tidigov          ###   ########.fr       */
+/*   Updated: 2023/05/02 11:12:35 by tidigov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 ClapTrap::ClapTrap()
 {
     std::cout<<"Parametrical Constructor called" << std::endl;
-    _Attack = 10;
-    _Energy = 10;
-    _Hit = 30;
+    _Attack = 20;
+    _Energy = 50;
+    _Hit = 100;
 }
 
 ClapTrap::ClapTrap(std::string name): _Name(name)
 {
     std::cout<<"Parametrical Constructor called" << std::endl;
-    _Attack = 10;
-    _Energy = 10;
-    _Hit = 30;
+    _Attack = 20;
+    _Energy = 50;
+    _Hit = 100;
 }
 
 ClapTrap::ClapTrap( ClapTrap const & src)
@@ -42,7 +42,7 @@ ClapTrap::~ClapTrap()
     std::cout<<_Name<<" : is destroyed" << std::endl;
 }
 ////////////////////////////////////////////////////////////////////////////////
-int	ClapTrap::getAttack(void) {
+int	ClapTrap::getAttack(void) const {
 	return this->_Attack;
 }
 
@@ -50,7 +50,7 @@ void	ClapTrap::setAttack(int i) {
 	ClapTrap::_Attack = i;
 }
 ////////////////////////////////////////////////////////////////////////////////
-int	ClapTrap::getEnergy(void) {
+int	ClapTrap::getEnergy(void) const {
 	return this->_Energy;
 }
 
@@ -58,12 +58,20 @@ void	ClapTrap::setEnergy(int i) {
 	ClapTrap::_Energy = i;
 }
 ////////////////////////////////////////////////////////////////////////////////
-int	ClapTrap::getHit(void) {
+int	ClapTrap::getHit(void) const {
 	return this->_Hit;
 }
 
 void	ClapTrap::setHit(int i) {
 	ClapTrap::_Hit = i;
+}
+////////////////////////////////////////////////////////////////////////////////
+std::string	ClapTrap::getName() const{
+	return _Name;
+}
+
+void	ClapTrap::setName(std::string name){
+	_Name = name;
 }
 ////////////////////////////////////////////////////////////////////////////////
 void    ClapTrap::attack(const std::string& target)

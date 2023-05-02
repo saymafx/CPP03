@@ -6,7 +6,7 @@
 /*   By: tidigov <tidigov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 15:56:40 by tidigov           #+#    #+#             */
-/*   Updated: 2023/04/19 16:21:11 by tidigov          ###   ########.fr       */
+/*   Updated: 2023/05/02 09:24:52 by tidigov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,9 @@ public:
     ScavTrap & operator=(const ScavTrap& rhs);
 
     void    attack(const std::string& target);
-////////////////////////////////////////////////////////////////////////////////
-    int	getAttack(void);
-    void	setAttack(int i);
-////////////////////////////////////////////////////////////////////////////////
-    int	getEnergy(void);
-    void	setEnergy(int i);
-////////////////////////////////////////////////////////////////////////////////
-    int	getHit(void);
-    void	setHit(int i);
+    void guardGate();
 };
+
+std::ostream &	operator<<(std::ostream &o, ScavTrap const & rhs);
 
 #endif
