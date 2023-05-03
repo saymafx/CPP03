@@ -6,7 +6,7 @@
 /*   By: tidigov <tidigov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 14:55:30 by tidigov           #+#    #+#             */
-/*   Updated: 2023/05/02 09:56:26 by tidigov          ###   ########.fr       */
+/*   Updated: 2023/05/03 16:47:47 by tidigov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,28 +37,39 @@
 //     std::cout << Defenderr.getAttack() << " " << Defenderr.getEnergy() << " " << Defenderr.getHit() << std::endl;
 // }
 
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
+
+
 int main()
 {
-    ClapTrap        sayma("tim");
-	ClapTrap        tod(sayma);
-	sayma.attack("a skinhead named tod");
-	tod.takeDamage(5);
-	tod.beRepaired(10);
+    ClapTrap	tim("Tim");
+	ClapTrap	sayma("Sayma");
+	
+	tim.attack("sayma");
+	sayma.takeDamage(sayma.getAttack());
+	sayma.beRepaired(10);
 	std::cout << std::endl;
 
-	ScavTrap        malik("malik");
-	ScavTrap        tim("tim");
-	ScavTrap		ted;
-	ted = malik;
-	malik.attack("an Arch Guardian");
-	tim.guardGate();
-	malik.takeDamage(5);
-	malik.beRepaired(10);
 
-	for(int i = 0;i<5;i++){
-		ted.attack("tim");
-		tim.takeDamage(20);
-	}
+	ScavTrap	malik("Malik");
+	ScavTrap	test(malik);
+	ScavTrap	say("Say");
+	ScavTrap	ted;
+	std::cout << std::endl;
+	
+	ted = malik;
+	malik.attack("Say");
+	say.guardGate();
+	say.attack("Malik");
+	malik.takeDamage(malik.getAttack());
+	malik.beRepaired(10);
+	std::cout << std::endl;
+	
+	
+	FragTrap	test1;
+	test1.highFivesGuys();
 	std::cout << std::endl;
 
 	return 0;

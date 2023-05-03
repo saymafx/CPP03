@@ -6,7 +6,7 @@
 /*   By: tidigov <tidigov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 14:56:51 by tidigov           #+#    #+#             */
-/*   Updated: 2023/05/02 09:30:45 by tidigov          ###   ########.fr       */
+/*   Updated: 2023/05/03 16:46:22 by tidigov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ ClapTrap::ClapTrap()
 
 ClapTrap::ClapTrap(std::string name): _Name(name)
 {
-    std::cout<<"Parametrical Constructor called" << std::endl;
+    std::cout<< _Name << " Parametrical Constructor called" << std::endl;
     _Attack = 10;
     _Energy = 10;
     _Hit = 30;
@@ -39,7 +39,7 @@ ClapTrap::ClapTrap( ClapTrap const & src)
     
 ClapTrap::~ClapTrap()
 {
-    std::cout<<_Name<<" : is destroyed" << std::endl;
+    std::cout<< _Name <<" Constructor: is destroyed" << std::endl;
 }
 ////////////////////////////////////////////////////////////////////////////////
 int	ClapTrap::getAttack(void) const {

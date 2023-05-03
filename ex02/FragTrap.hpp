@@ -6,12 +6,12 @@
 /*   By: tidigov <tidigov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 11:07:01 by tidigov           #+#    #+#             */
-/*   Updated: 2023/05/02 11:07:48 by tidigov          ###   ########.fr       */
+/*   Updated: 2023/05/03 15:06:21 by tidigov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
 #include "ClapTrap.hpp"
 
@@ -26,9 +26,6 @@ public:
     
     ~FragTrap();
 
-    FragTrap & operator=(const FragTrap& rhs);
-
-    void    attack(const std::string& target);
     void highFivesGuys(void);
 };
 
